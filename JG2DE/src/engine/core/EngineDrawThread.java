@@ -17,22 +17,15 @@ public class EngineDrawThread implements Runnable{
 
 	public boolean shouldBeRunning ;
 	public DrawingObject drawingObject;
+	public GameDataManager gameManager;
 	public int delay =1;
-	private BufferedImage _img = new BufferedImage(600,600,BufferedImage.TYPE_INT_ARGB);
 	/* (non-JavadoDc)
 	 * @see java.lang.Runnable#run()
 	 */
 	@Override
 	public void run() {
-		Graphics g = _img.getGraphics();
-		int i = 0;
 		while(shouldBeRunning) {
-			g.setColor(Color.WHITE);
-			g.fillRect(0, 0, drawingObject.getWidth(), drawingObject.getHeight());
-			g.setColor(Color.BLACK);
-			g.drawRect(i, i, 20, 20);
-			drawingObject.customDraw(_img);
-			i++;
+			drawingObject.customDraw(gameManager.drawGame(drawingObject.getWidth(), drawingObject.getHeight()));
 			try {
 				Thread.sleep(1000/delay);
 			} catch (InterruptedException e) {
