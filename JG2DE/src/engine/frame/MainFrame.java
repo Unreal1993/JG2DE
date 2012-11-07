@@ -23,7 +23,7 @@ public class MainFrame extends JApplet implements KeyListener{
 		this.setFocusable(true);
 		requestFocusInWindow();
 		_drawingObject = new DrawingObject();
-		_drawingObject.setBounds(0, 0, 500,500);
+		_drawingObject.setBounds(0, 0, 600,500);
 		this.getContentPane().add(_drawingObject);
 		core = new EngineCore(_drawingObject,100);
 		core.Initialize();

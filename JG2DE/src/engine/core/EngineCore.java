@@ -37,7 +37,7 @@ public class EngineCore {
 	/** Intializes the engine (Starts update and drawing threads) */
 	public void Initialize() {
 		// Start update & drawing thread here ( Dont forget to check for refference . )
-		_gDataManager = new GameDataManager();
+		_gDataManager = new GameDataManager(_drawingObject.getWidth());
 		_drawingThread = new EngineDrawThread();
 		_drawingThread.shouldBeRunning = true;
 		_drawingThread.delay = _fpsLimit;

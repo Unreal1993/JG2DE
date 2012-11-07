@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JLabel;
 
+@SuppressWarnings("serial")
 public class DrawingObject extends JLabel{
 	private BufferedImage _img;
 	

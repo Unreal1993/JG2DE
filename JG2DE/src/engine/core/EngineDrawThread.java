@@ -6,11 +6,6 @@
   */
 package engine.core;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-
-import engine.helpers.Vector2D;
 import engine.objects.DrawingObject;
 
 public class EngineDrawThread implements Runnable{
