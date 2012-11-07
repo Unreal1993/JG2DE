@@ -6,6 +6,8 @@
  */
 package engine.core;
 
+import java.awt.event.KeyEvent;
+
 import engine.objects.DrawingObject;
 
 public class EngineCore {
@@ -49,14 +51,9 @@ public class EngineCore {
 	public void Stop() {
 		_threadDrawing.stop();
 	}
-	/** Pulses and updates engine */
-	public void forceUpdate() {
-
-	}
-
-	/** Draws the game */
-	public void forceDraw() {
-
+	
+	public void KeyPressed(KeyEvent e) {
+		_gDataManager.keyboardInputHandler(e);
 	}
 
 	/**
