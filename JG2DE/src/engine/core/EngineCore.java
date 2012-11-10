@@ -45,7 +45,7 @@ public class EngineCore {
 		_drawingThread.gameManager = _gDataManager;
 		_threadDrawing = new Thread(_drawingThread,"Drawing");
 		_threadDrawing.start();
-		
+		this._running = true;
 	}
 	/** Stops engine and its working threads */
 	public void Stop() {
@@ -69,6 +69,7 @@ public class EngineCore {
 	 */
 	public void set_fpsLimit(int _fpsLimit) {
 		this._fpsLimit = _fpsLimit;
+		this._drawingThread.delay=_fpsLimit; 
 	}
 
 	/**

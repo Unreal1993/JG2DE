@@ -6,6 +6,7 @@
   */
 package engine.frame;
 
+import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -17,13 +18,16 @@ import engine.objects.DrawingObject;
 @SuppressWarnings("serial")
 public class MainFrame extends JApplet implements KeyListener{
 	DrawingObject _drawingObject;
+	int _cubicSize = 600;
 	EngineCore core;
 	public MainFrame() {
 		this.addKeyListener(this);
 		this.setFocusable(true);
 		requestFocusInWindow();
-		_drawingObject = new DrawingObject();
-		_drawingObject.setBounds(0, 0, 600,500);
+		_drawingObject = new 	DrawingObject();
+		_drawingObject.setBounds(0, 0, _cubicSize,_cubicSize);
+		_drawingObject.setMaximumSize(new Dimension(_cubicSize,_cubicSize));
+		_drawingObject.setMinimumSize(new Dimension(300,600));
 		this.getContentPane().add(_drawingObject);
 		core = new EngineCore(_drawingObject,100);
 		core.Initialize();
